@@ -1,0 +1,8 @@
+<%= form_for [ @post, @comment] do |f| %>
+
+  <%= f.label :avis, "Entre un avis" %>
+  <%= f.text_field :avis, placeholder: "Ajout le avis" %>
+
+  <%= f.submit :Création %>
+
+<% end %>

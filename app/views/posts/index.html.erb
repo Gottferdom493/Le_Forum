@@ -4,7 +4,7 @@
   <h2><%= post.titre %></h2>
   <p><%= post.sujet %></p>
   <p><%= post.url %></p>
-    <%# <%= link_to "Supprimer", post_path(post), method: :delete, data: {confirm: "tu es sure?"} %>
+  <%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
 <% end %>
 
 

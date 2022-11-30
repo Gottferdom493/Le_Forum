@@ -1,0 +1,8 @@
+<h1>Coucou Comments</h1>
+
+<% @comments.each do |comment| %>
+  <h2><%= comment.avis %></h2>
+<% end %>
+
+<%= link_to "Ajoute un Item", new_post_comment_path %>
+<%= link_to "Retour", posts_path %>

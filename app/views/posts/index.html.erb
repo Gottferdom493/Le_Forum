@@ -11,8 +11,5 @@
   <%= link_to "Allez voir", post_comments_path(post) %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <% if post.user == current_user %>
+
     <%= link_to "Ajoute ton sujet", new_post_path %>
-  <% end %>
-<% end %>

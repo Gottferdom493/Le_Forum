@@ -22,6 +22,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to post_path(@comment.post), status: :see_other
+  end
+
 private
 
 def comment_params

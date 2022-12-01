@@ -4,10 +4,5 @@
   <h2><%= comment.avis %></h2>
 <% end %>
 
-<% @comments.each do |comment| %>
-  <% if comment.user == current_user %>
-    <%= link_to "Ajoute un Item", new_post_comment_path %>
-  <% end %>
-<% end %>
-
+<%= link_to "Ajoute un Item", new_post_comment_path %>
 <%= link_to "Retour", posts_path %>

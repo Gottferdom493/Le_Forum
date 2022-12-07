@@ -5,11 +5,12 @@
   <h2><%= post.titre %></h2>
   <p><%= post.sujet %></p>
   <p><%= link_to "Le lien du sujet", post.url, :target=>"_blank" %></p>
+    <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
   <% if post.user == current_user %>
     <%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
   <% end %>
   <%= link_to "Allez voir", post_comments_path(post) %>
 <% end %>
 
-
     <%= link_to "Ajoute ton sujet", new_post_path %>
+

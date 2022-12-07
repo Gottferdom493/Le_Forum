@@ -9,6 +9,8 @@
 				<%= f.label :url, "L'url" %>
 				<%=f.text_field :url, placeholder: "Ajout ton URL" %>
 
+        <%= f.file_field :photo %>
+
 				<%= f.submit :Création %>
 
 			<% end %>

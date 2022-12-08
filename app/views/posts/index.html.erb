@@ -5,7 +5,10 @@
   <h2><%= post.titre %></h2>
   <p><%= post.sujet %></p>
   <p><%= link_to "Le lien du sujet", post.url, :target=>"_blank" %></p>
-    <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if post.photo_1.attached? %>
+      <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
   <% if post.user == current_user %>
     <%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
   <% end %>
@@ -13,4 +16,3 @@
 <% end %>
 
     <%= link_to "Ajoute ton sujet", new_post_path %>
-
